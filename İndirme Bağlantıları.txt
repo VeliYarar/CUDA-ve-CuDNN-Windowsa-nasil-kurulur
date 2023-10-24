@@ -1,0 +1,14 @@
+İndirme Bağlantıları
+
+Aşağıdaki bağlantıları bu bölüm boyunca kullanacağız. Yan sekme olarak tarayıcınızda açık kalmasında fayda var:
+
+Desteklenen GPU'ların Listesi: https://developer.nvidia.com/cuda-gpus 
+
+GPU Driver: https://www.nvidia.com/download/index.aspx
+
+CUDA Toolkit Arşivi: https://developer.nvidia.com/cuda-toolkit-archive
+
+NVIDIA cuDNN: https://developer.nvidia.com/rdp/cudnn-archive
+
+ZLIB DLL: https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html
+
