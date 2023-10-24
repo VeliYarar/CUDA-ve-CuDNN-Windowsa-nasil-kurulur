@@ -7,16 +7,16 @@ CuDNN ise "CUDA Deep Neural Network" kısaltmasıdır ve NVIDIA tarafından geli
 ## CUDA, CuDNN’ i bilgisayarımıza nasıl kurarız ?
 
 ## 1.Adım: GPU Uyumluluğu Kontrolü
-İlk önce bilgisayarımızın sahıp olduğu GPU yacağımız işlemleri destekliyor mu öğrenmemiz gerekiyor. Bunu öğreneceğimiz bağlantı İndirme Bağlantıları adlı klasörde mevcut. Bağlantıya gidip kendi GPU’muzu arıyoruz, compute capability öğreniyoruz eğer yoksa Google colab sizleri bekliyor. Aynı işlemleri orada da yapabilir. Colab’ ta nasıl derin öğrenme algoritmaları koşturulur başka bir repositories’ de sizlere anlatıcam.
+İlk önce bilgisayarımızın sahıp olduğu GPU yacağımız işlemleri destekliyor mu öğrenmemiz gerekiyor. Bunu öğreneceğimiz bağlantı İndirme Bağlantıları adlı klasörde mevcut(https://developer.nvidia.com/cuda-gpus). Bağlantıya gidip kendi GPU’muzu arıyoruz, compute capability öğreniyoruz eğer yoksa Google colab sizleri bekliyor. Aynı işlemleri orada da yapabiliriz. Colab’ ta nasıl derin öğrenme algoritmaları koşturulur başka bir repositories’ de sizlere anlatacağım.
 
 ## 2.Adım: GPU Sürücüsü Kurulumu 
-Bilgisayarımızın sahip olduğu GPU için driver kuracağız. Driver indirme linkini yine İndirme Bağlantıları dosyasına bıraktım. Dosyadan linke gidip driver indirip kuruyoruz. Linke gittiğinizde otomatik olarak GPU’ nuzu tanıyarak uygun kısımları dolduracaktır. İndikten sonra next ‘ tıklayarak kurulumu tamamlayın.
+Bilgisayarımızın sahip olduğu GPU için driver kuracağız. Driver indirme linkini yine İndirme Bağlantıları dosyasına bıraktım(https://www.nvidia.com/download/index.aspx). Dosyadan linke gidip driver indirip kuruyoruz. Linke gittiğinizde otomatik olarak GPU’ nuzu tanıyarak uygun kısımları dolduracaktır. İndikten sonra next ‘ tıklayarak kurulumu tamamlayın.
 
 ## 3.Adım: CUDA Kurulumu
-Şimdi CUDA’ yı indirelim. Yine linki yine İndirme Bağlantıları dosyasına bıraktım. Linke tıkladıktan sonra acılan sayfada birçok CUDA versiyonu olacak. Biz bunlardan CUDA Toolkit 11.7.0 (May 2022) sürümünü indireceğiz. Neden son sürümünü kurmadık, çünkü son sürüme uygun CuDNN sürümü mevcut değil. Daha stabil çalışan 11.7.0 sürümü kuracağız. İndirme kısmına gelelim; CUDA Toolkit 11.7.0 (May 2022) kısmına tıklıyınca karşımıza çıkan sayfada uygun seçenekleri seçmemiz gerekiyor. İlk olarak işletim sistemi seçiyoruz windows, sonra Architecture x86_64, sonra işletim sistemi versiyonu 10, sonra indirme tipi exe(local) seçiyoruz. Tahmini 2.5, 3 gblık bir exe dosyasını inecektir. İnen dosyaya çift tıklayıp çalıştırıyoruz. Sonra ileri butonuna tıklayarak kurulumu tamamlıyoruz.
+Şimdi CUDA’ yı indirelim. Yine linki yine İndirme Bağlantıları dosyasına bıraktım(https://developer.nvidia.com/cuda-toolkit-archive). Linke tıkladıktan sonra açılan sayfada birçok CUDA versiyonu olacak. Biz bunlardan CUDA Toolkit 11.7.0 (May 2022) sürümünü indireceğiz. Neden son sürümünü kurmadık, çünkü son sürüme uygun CuDNN sürümü mevcut değil. Daha stabil çalışan 11.7.0 sürümü kuracağız. İndirme kısmına gelelim; CUDA Toolkit 11.7.0 (May 2022) kısmına tıklayınca karşımıza çıkan sayfada uygun seçenekleri seçmemiz gerekiyor. İlk olarak işletim sistemi seçiyoruz windows, sonra Architecture x86_64, sonra işletim sistemi versiyonu 10, sonra indirme tipi exe(local) seçiyoruz. Tahmini 2.5, 3 gblık bir exe dosyasını inecektir. İnen dosyaya çift tıklayıp çalıştırıyoruz. Sonra ileri butonuna tıklayarak kurulumu tamamlıyoruz.
 
 ## 4.Adım: CuDNN Kurulumu
-Şimdi CuDNN’ i indirelim. Yine linki yine İndirme Bağlantıları dosyasına bıraktım. Linke tıkladıktan sonra acılan sayfada birçok CuDNN versiyonu olacak. Biz bunlardan CUDA Toolkit 11.7.0 (May 2022) sürümünü uygun olan CuDNN v8.5.0 (August 8th,2022) for CUDA 11x versiyonun indireceğiz. CuDNN v8.5.0 (August 8th,2022) for CUDA 11x kısmına tıklıyoruz ve Windows için uygun olan Local Installer for Windows(zip) kısmına tıklayarak indirme işlemini başlatıyoruz.
+Şimdi CuDNN’ i indirelim. Yine linki yine İndirme Bağlantıları dosyasına bıraktım(https://developer.nvidia.com/rdp/cudnn-archive). Linke tıkladıktan sonra açılan sayfada birçok CuDNN versiyonu olacak. Biz bunlardan CUDA Toolkit 11.7.0 (May 2022) sürümünü uygun olan CuDNN v8.5.0 (August 8th,2022) for CUDA 11x versiyonun indireceğiz. CuDNN v8.5.0 (August 8th,2022) for CUDA 11x kısmına tıklıyoruz ve Windows için uygun olan Local Installer for Windows(zip) kısmına tıklayarak indirme işlemini başlatıyoruz.
 
 ## 5.Adım: Zlib İndirme
 Şimdi Zlib’ İ indirelim. Bu dosyayı sizin için yukarı bıraktım. Oradan indirebilirsiniz. Linki İndirme Bağlantıları dosyasında var ama orada bulmanız biraz zor olabilir. O yüzden sizi için yukarı bıraktım.
@@ -32,7 +32,8 @@ Simdi yaptığımız işlemleri test edelim. Ben yolov8 üzerinde denemeyi terci
 Yerel disk’e yolov8 adında bir dosya oluşturalım. Ardında Anaconda Prompt’u açıp cd komutu kullanarak yolov8 dosya dizinine gelelim. Bu dizinde ”conda create -n yolov8-gpu python=3.10.6” komutunu çalıştıralım. Ardında “conda activate yolov8-gpu” komutunu çalıştıralım. Bu komutlar ile yeni bir environments oluşturup değiştiriyoruz. Terminal yolunuzun yolov8 dosyasında olduğundan emin olduktan sonra gerekli kütüphane kurulumları için sırasıyla “pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117 --timeout=1000” , sonra  ” pip install ultralytics ” komutlarını çalıştıralım. Ardında https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8l.pt bu linki tıklayarak yada arama motoruna yapıştırarak indirme işlemini yapalım. İnen dosyayı yolov8 dosyasına taşıyalım.
 Ardında terminla dizini yolov8 dosyasında  (terminal dizinini cd komutu ile uygun dosyaya getiriniz)  iken  “yolo predict model=yolov8n.pt source='https://ultralytics.com/images/bus.jpg' ” bu komutu çalıştırın.
 Herşeyi doğru yaptıysanız yolov8 dosyası içine bir run/detect/predit dosyası oluşacak ve dosya içinde işlenmiş bus.jpg fotoğrafı olması gerekiyor.
-Okuduğunuz için teşekkür ederim umarım işinize yaramıştır….
+
+## Okuduğunuz için teşekkür ederim umarım işinize yaramıştır….
 
 
 
