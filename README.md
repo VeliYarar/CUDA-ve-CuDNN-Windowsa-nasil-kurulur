@@ -21,7 +21,7 @@ Bilgisayarımızın sahip olduğu GPU için driver kuracağız. Driver indirme l
 ## 5.Adım: Zlib İndirme
 Şimdi Zlib’ İ indirelim. Bu dosyayı sizin için yukarı bıraktım. Oradan indirebilirsiniz. Linki İndirme Bağlantıları dosyasında var ama orada bulmanız biraz zor olabilir. O yüzden sizi için yukarı bıraktım.
 
-##6 .Adım: Dosya Düzenleme
+## 6.Adım: Dosya Düzenleme
 Şimdi en önemli kısma geldik. Burada yapacağınız bir hata driverların doğru çalışmasını engeller. Lütfen dikkatli olalım.
 İndirdiğimiz CuDNN ve Zlib dosyalarını yerel disk içerisine açtığımız bir dosya içine taşıyalım. CuDNN zip dosyasını buraya ayıklayalım. Yerel disk / Program Files kısmında bulunan NVIDIA GPU Computing Toolkit dosyasını buluyoruz. İçerisine CUDA var. CUDA içerisine giriyoruz. Burada v11.7 adında dosya bulunuyor. Bu klasörün içine giriyoruz. Sonra ayıkladığımız CuDNN klasörünün içine giriyoruz. Bu dosya içinde bin, lib, include adında dosyalar var. ***buradaki dosyaların aynıları CUDA dosyasında da var. şimdi CuDDN / bin dosyasında bulunanları kopyalayıp, CUDA / bin klasörüne yapıştırıyoruz. Yapıştırınca bir uyarı alacaksınız aynı dosyadan burada mevcut uyarısı. Değiştir ve kaydet diyerek devam edin. Aynı şekilde include içindekileri kopyalayıp, yapıştırıyoruz. Aynı şekilde CuDDN / lib dosyasında bulunanları kopyalatıp, CUDA / lib/ x64 içerisine yapıştırıyoruz.
 Yerel disk içerisine Zlib adında bir klasör açalım. İçerisine, indirdiğimiz zlib dosyasının içerisindekileri kopyalayıp, yapıştıralım.
